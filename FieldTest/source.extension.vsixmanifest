@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vsix xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="ec328499-1bbe-46b9-9569-9808db4ddbb0">
+    <Name>Field Test</Name>
+    <Author>William Brander</Author>
+    <Version>0.1</Version>
+    <Description xml:space="preserve">An open-source test runner add-in for visual studio. Currently supports NUnit and MSTest.
+
+Decent test runners shouldn't cost money. Testing should be a first class citizen of development and a decent, free test runner is needed for that.</Description>
+    <Locale>1033</Locale>
+    <MoreInfoUrl>http://FieldTest.Codeplex.com</MoreInfoUrl>
+    <License>License.txt</License>
+    <PreviewImage>Preview.png</PreviewImage>
+    <InstalledByMsi>false</InstalledByMsi>
+    <SupportedProducts>
+      <VisualStudio Version="10.0">
+        <Edition>Pro</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.0" />
+  </Identifier>
+  <References>
+    <Reference Id="Microsoft.VisualStudio.MPF" MinVersion="10.0">
+      <Name>Visual Studio MPF</Name>
+    </Reference>
+  </References>
+  <Content />
+</Vsix>
