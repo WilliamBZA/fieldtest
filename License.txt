@@ -1,0 +1,5 @@
+Copyright William Brander
+http://WilliamB.Net
+
+Subject to the MS-PL License
+http://www.opensource.org/licenses/ms-pl
