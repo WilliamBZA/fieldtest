@@ -234,7 +234,7 @@ namespace FieldTest
                                  in projects
                               select GetProjectOutputDirectory(project)).ToList();
 
-            var testFinder = new RemoteTestFinder();
+            ITestFinder testFinder = new CCITestFinder(); //new RemoteTestFinder();
 
             return testFinder.FindTestsInProjects(assemblies);
         }

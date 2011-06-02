@@ -200,21 +200,25 @@ namespace FieldTest
 
         public void NavigateToError(TestDetails testDetails)
         {
-            string filename = testDetails.GetFilenameFromMessage();
-            if (((EnvDTE80.DTE2)_dteReference).get_IsOpenFile(EnvDTE.Constants.vsViewKindCode, filename))
+            if (testDetails.LineNumber != null && !string.IsNullOrEmpty(testDetails.Filename))
             {
-                var doc = _dteReference.Documents.Item(filename);
-                doc.Activate();
+                string filename = testDetails.Filename;
 
-                NavigateToLine(doc.Selection as TextSelection, testDetails.GetLineNumberFromMessage());
-            }
-            else
-            {
-                var win = _dteReference.OpenFile(EnvDTE.Constants.vsViewKindCode, filename);
-                win.Visible = true;
-                win.SetFocus();
+                if (((EnvDTE80.DTE2)_dteReference).get_IsOpenFile(EnvDTE.Constants.vsViewKindCode, filename))
+                {
+                    var doc = _dteReference.Documents.Item(filename);
+                    doc.Activate();
 
-                NavigateToLine(win.Selection as TextSelection, testDetails.GetLineNumberFromMessage());
+                    NavigateToLine(doc.Selection as TextSelection, testDetails.LineNumber.Value);
+                }
+                else
+                {
+                    var win = _dteReference.OpenFile(EnvDTE.Constants.vsViewKindCode, filename);
+                    win.Visible = true;
+                    win.SetFocus();
+
+                    NavigateToLine(win.Selection as TextSelection, testDetails.LineNumber.Value);
+                }
             }
         }
 

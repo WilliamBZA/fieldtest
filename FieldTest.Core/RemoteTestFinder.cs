@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace FieldTest.Core
 {
-    public class RemoteTestFinder
+    public class RemoteTestFinder : ITestFinder
     {
         public RemoteTestFinder()
         {
@@ -24,8 +24,8 @@ namespace FieldTest.Core
                 if (pathWrapper != null && !string.IsNullOrEmpty(pathWrapper.OutputDirectory))
                 {
                     /*
-                                            ASSEMBLYPATH:{Path};=>ASSEMBLYPATH:{Path};
-                                    */
+                            ASSEMBLYPATH:{Path};=>ASSEMBLYPATH:{Path};
+                    */
                     if (testArguments.Length > 0)
                     {
                         testArguments.Append("=>");
@@ -167,7 +167,7 @@ namespace FieldTest.Core
 
                     foreach (var test in testsInClass)
                     {
-                        var newTest = new TestDetails(newClass, test.MethodName);
+                        var newTest = new TestDetails(newClass, test.MethodName, "", 0);
                         newTest.TestFramework = test.Type;
 
                         newClass.Tests.Add(newTest);

@@ -147,7 +147,7 @@ namespace FieldTest.Runner
             string fullClassName = inputLines[2];
             string testFrameworkString = inputLines[3];
 
-            TestDetails testDetails = new TestDetails(classes[fullClassName], testMethodName);
+            TestDetails testDetails = new TestDetails(classes[fullClassName], testMethodName, "", 0);
             testDetails.TestFramework = (TestFramework)Enum.Parse(typeof(TestFramework), testFrameworkString);
             tests.Add(testId, testDetails);
         }
