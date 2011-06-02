@@ -37,12 +37,33 @@
     <AssemblyOriginatorKeyFile>FieldTest.Core.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Cci.MetadataHelper">
+      <HintPath>C:\Users\williamb\Desktop\ccimetadata-62408\Sources\PdbReader\bin\Debug\Microsoft.Cci.MetadataHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Cci.MetadataModel">
+      <HintPath>C:\Users\williamb\Desktop\ccimetadata-62408\Sources\PdbReader\bin\Debug\Microsoft.Cci.MetadataModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Cci.PdbReader">
+      <HintPath>C:\Users\williamb\Desktop\ccimetadata-62408\Sources\PdbReader\bin\Debug\Microsoft.Cci.PdbReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Cci.PeReader">
+      <HintPath>C:\Users\williamb\Desktop\ccimetadata-62408\Sources\PdbReader\bin\Debug\Microsoft.Cci.PeReader.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Cci.SourceModel">
+      <HintPath>C:\Users\williamb\Desktop\ccimetadata-62408\Sources\PdbReader\bin\Debug\Microsoft.Cci.SourceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Contracts">
+      <HintPath>C:\Users\williamb\Desktop\ccimetadata-62408\Sources\PdbReader\bin\Debug\Microsoft.Contracts.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="nunit.mocks, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="pnunit.framework, Version=1.0.4109.34242, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Configuration" />
@@ -56,12 +77,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CCITestFinder.cs" />
     <Compile Include="ConsoleApplicationTestExecutor.cs" />
     <Compile Include="IConfigurationManager.cs" />
     <Compile Include="IDebugAttacher.cs" />
     <Compile Include="IEditorNavigator.cs" />
     <Compile Include="IOutputWriter.cs" />
     <Compile Include="ITestExecutor.cs" />
+    <Compile Include="ITestFinder.cs" />
     <Compile Include="Model\BaseTestNavigator.cs" />
     <Compile Include="Model\TestClass.cs" />
     <Compile Include="Model\TestAssembly.cs" />

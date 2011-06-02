@@ -226,13 +226,7 @@ namespace FieldTest
                 return;
             }
 
-            if (testDetails.Status == TestStatus.Failed || testDetails.Status == TestStatus.FailedPrevious || testDetails.Status == TestStatus.Inconclusive || testDetails.Status == TestStatus.InconclusivePrevious)
-            {
-                // navigate to error
-                _navigator.NavigateToError(testDetails);
-
-                // where is the error?
-            }
+            _navigator.NavigateToError(testDetails);
         }
     }
 }

@@ -9,12 +9,23 @@ namespace FieldTest.Core.Model
     public class TestDetails : BaseTestNavigator
     {
         public TestDetails(TestClass testClass, string methodName)
+            : this(testClass, methodName, null, null)
+        {
+        }
+
+        public TestDetails(TestClass testClass, string methodName, string filename, int? lineNumber)
         {
             Class = testClass;
             MethodName = methodName;
+            Filename = filename;
+            LineNumber = lineNumber;
         }
 
         public string MethodName { get; set; }
+
+        public string Filename { get; set; }
+
+        public int? LineNumber { get; set; }
 
         public string Message { get; set; }
 

@@ -33,7 +33,7 @@ namespace FieldTest.Tests.Specflow.Test_Runner.RemoteTestRunner
 
             var testAssembly = new TestAssembly("", "ValidAssembly", "This is a string to a valid location");
             var testClass = new TestClass(testAssembly, "ValidClass", "Valid.Namespace");
-            var test = new TestDetails(testClass, "TestMethod");
+            var test = new TestDetails(testClass, "TestMethod", "", 0);
 
             _tests = new List<TestDetails>()
             {
